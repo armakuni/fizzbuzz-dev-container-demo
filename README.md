@@ -38,11 +38,11 @@ Any additional services are started as part of the dev container by adding the s
 
 ```json
 {
-	"name": "Python 3",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspace",
-  "runServices": ["fizzbuzz"]
+    "name": "FizzBuzz",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "runServices": ["fizzbuzz"]
 }
 ```
 
