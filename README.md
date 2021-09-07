@@ -6,7 +6,7 @@ The remote containers feature of VS code spins up your development environment w
 
 ## FizzBuzz Example
 
-The repo contains a a FizzBuzz app, complete with tests and a Dockerfile to build the app into an image.
+The repo contains a FizzBuzz app, complete with tests and a Dockerfile to build the app into an image.
 
 For ease, various commands have been added to a Makefile 
 
@@ -46,10 +46,16 @@ Any additional services are started as part of the dev container by adding the s
 }
 ```
 
+When the docker-compose file is initiated a network is created and the both the 'fizzbuzz' and the 'app' services (as listed in docker-compose) are added to the network.
+
+Each container is now able to access the other using the service name as the hostname. 
+
+A single example integration test, utilises this feature and makes ah HTTP GET request to `http://fizzbuzz:5000/` in `tests/test_fizzbuzz.py`
+
 ## Running the Container
 
-Running the development environment is trival:
-* firstly, install the VS code extention 'Remote - Containers'. 
-* run the `Remote-Containers: Reopen in Container` command from the command palette. Or alternativly click the bottom leftmost button 
+Running the development environment is trivial:
+* firstly, install the VS code extension 'Remote - Containers'. 
+* run the `Remote-Containers: Reopen in Container` command from the command palette. Or alternatively click the bottom leftmost button 
 
-Once launched, the local workspace is mapped to the container, so any changes to files are imediately availible to the container
+Once launched, the local workspace is mapped to the container, so any changes to files are immediately available to the container
