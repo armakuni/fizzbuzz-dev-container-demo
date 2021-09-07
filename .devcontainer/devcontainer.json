@@ -1,0 +1,7 @@
+{
+	"name": "FizzBuzz",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+  "runServices": ["fizzbuzz"]
+}
